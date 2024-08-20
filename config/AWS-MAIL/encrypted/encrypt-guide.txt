@@ -1,0 +1,18 @@
+
+passphrase:
+the widening gyre 0
+
+#########
+# encrypt
+#
+#export FILE_NAME=RoR-DEPLOY.md
+#export FILE_NAME=APP-INIT.md
+export FILE_NAME=aws-rails-ses-smtp-user_credentials.csv
+gpg --output encrypted/${FILE_NAME}.gpg --encrypt --recipient rob.lockhart@yahoo.co.uk ${FILE_NAME}
+
+#########
+# decrypt
+#
+#export FILE_NAME=RoR-INSTALL-DEPLOY-0.md
+gpg --output ../${FILE_NAME} --decrypt ${FILE_NAME}.gpg
+
